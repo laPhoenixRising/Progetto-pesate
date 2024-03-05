@@ -10,4 +10,5 @@ Rails.application.routes.draw do
   get "/", to: "home#show"
   get "/login", to: "login#show"
   get "/archivio", to: "pesate#archivio"
+  post "/salva", to: "pesate#salva"
 end
