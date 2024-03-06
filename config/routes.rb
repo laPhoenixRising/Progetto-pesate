@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   # root "posts#index"
   get "/", to: "home#show"
   get "/login", to: "login#show"
+  get "/authenticate", to: "login#authenticate"
   get "/archive", to: "pesate#archive"
   post "/create", to: "pesate#create"
 end
