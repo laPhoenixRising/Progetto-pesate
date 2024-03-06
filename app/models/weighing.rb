@@ -1,0 +1,2 @@
+class Weighing < ApplicationRecord
+end
