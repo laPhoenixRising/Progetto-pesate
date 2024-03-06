@@ -1,6 +1,8 @@
 class PesateController < ApplicationController
+  include Pagy::Backend
+
   def archive
-   @weighings = Weighing.all
+   @pagy, @weighings = pagy(Weighing.all)
   end
   
   def create

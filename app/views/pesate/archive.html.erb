@@ -4,6 +4,7 @@
   <li><%= weighing.value %> </li>
 <% end %>
 </ul>
+<%== pagy_nav(@pagy) if @pagy.pages > 1 %>
 
 <%= link_to("homepage", "/") %>  
 
