@@ -1,0 +1,9 @@
+<h1>Archivio pesate</h1>
+<ul>
+<% @weighings.each do |weighing| %>
+  <li><%= weighing.value %> </li>
+<% end %>
+</ul>
+
+<%= link_to("homepage", "/") %>  
+
