@@ -1,5 +1,5 @@
-<form action="/authenticate" method="post">
-E-mail:  <input type="email" name="email"/>
-Password:  <input type="password" name="password" />
-<button type="submit">Invia</button>
-</form>
+<%= form_with url: "/authenticate", method:"post" do |form| %>
+E-mail:  <%= form.password_field :password %>
+Password:  <%= form.email_field :address %>
+<%= form.submit "Invia" %>
+<% end %>
