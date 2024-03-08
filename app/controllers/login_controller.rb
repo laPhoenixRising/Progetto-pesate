@@ -3,7 +3,7 @@ class LoginController < ApplicationController
     end
 
     def authenticate
-        user = User.find_by(email: params[:address], password: params[:password])
+        user = User.find_by(email: params[:email], password: params[:password])
         if user != nil
             session[:utente] = user.id
             redirect_to "/"
