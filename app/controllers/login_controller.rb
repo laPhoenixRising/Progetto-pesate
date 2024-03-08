@@ -11,4 +11,9 @@ class LoginController < ApplicationController
             redirect_to "/login"
         end
     end
+
+    def destroy
+        session[:utente] = nil
+        redirect_to "/login"
+    end
 end
