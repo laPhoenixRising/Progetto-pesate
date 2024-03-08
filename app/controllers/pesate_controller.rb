@@ -2,7 +2,11 @@ class PesateController < ApplicationController
   include Pagy::Backend
 
   def archive
-   @pagy, @weighings = pagy(Weighing.all.order(created_at: :desc))
+    if session[:utente]
+      @pagy, @weighings = pagy(Weighing.all.order(created_at: :desc))
+    else
+      redirect_to "/login"
+    end
   end
   
   def create
