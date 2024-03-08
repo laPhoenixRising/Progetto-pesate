@@ -1,3 +1,4 @@
+<%= @user.email%>
 <%= form_with url: "/create", method:"post" do |form| %>
   <%= form.number_field :weigh, step: 0.1, placeholder: "inserisci pesata" %>
   <%= form.submit "Invia" %>
