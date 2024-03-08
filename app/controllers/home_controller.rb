@@ -2,7 +2,7 @@ class HomeController < ApplicationController
     def show
         if session[:utente]
             @user = User.find(session[:utente])
-            @weighings = Weighing.limit(10).order(created_at: :desc)
+            @weighings = Weighing.where(user_id: session[:utente]).limit(10).order(created_at: :desc)
         else
             redirect_to "/login"
         end
