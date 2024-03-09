@@ -17,4 +17,13 @@ class PesateController < ApplicationController
       redirect_to "/login"
     end
   end
+
+  def delete
+    if session[:utente]
+      if Weighing.find_by(id: params[:id], user_id: session[:utente]) != nil
+        Weighing.destroy(params[:id])
+        redirect_to "/archive"
+      end
+    end
+  end
 end
