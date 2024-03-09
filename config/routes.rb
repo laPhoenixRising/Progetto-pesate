@@ -12,6 +12,7 @@ Rails.application.routes.draw do
   delete "/logout", to:"login#destroy"
   post "/authenticate", to: "login#authenticate"
   get "/archive", to: "pesate#archive"
+  delete "/delete/:id", to: "pesate#delete"
   post "/create", to: "pesate#create"
 end
 

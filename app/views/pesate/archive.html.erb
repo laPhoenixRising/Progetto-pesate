@@ -1,7 +1,7 @@
 <h1>Archivio pesate</h1>
 <ul>
 <% @weighings.each do |weighing| %>
-  <li><%= weighing.value %> </li>
+  <li><%= weighing.value%><%= link_to("Delete", "/delete/#{weighing.id}", data: { turbo_method: :delete })%></li>
 <% end %>
 </ul>
 <%== pagy_nav(@pagy) if @pagy.pages > 1 %>
