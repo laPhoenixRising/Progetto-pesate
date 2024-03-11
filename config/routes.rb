@@ -6,11 +6,7 @@ Rails.application.routes.draw do
   get "up" => "rails/health#show", as: :rails_health_check
 
   root "home#show"
-
-  get "/login", to: "login#show"
-  delete "/logout", to:"login#destroy"
-  post "/authenticate", to: "login#authenticate"
-  
+  resource :login, only: [:new, :create, :destroy]
   resources :weighings, only: [:index, :destroy, :create]
 end
 

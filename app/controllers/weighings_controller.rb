@@ -5,7 +5,7 @@ class WeighingsController < ApplicationController
     if session[:utente]
       @pagy, @weighings = pagy(Weighing.where(user_id: session[:utente]).order(created_at: :desc))
     else
-      redirect_to "/login"
+      redirect_to new_login_path
     end
   end
   
@@ -14,7 +14,7 @@ class WeighingsController < ApplicationController
       Weighing.create(value: params[:weigh], user_id: session[:utente])
       redirect_to root_path
     else
-      redirect_to "/login"
+      redirect_to new_login_path
     end
   end
 
