@@ -6,7 +6,7 @@ class LoginController < ApplicationController
         user = User.find_by(email: params[:email], password: params[:password])
         if user != nil
             session[:utente] = user.id
-            redirect_to "/"
+            redirect_to root_path
         else
             redirect_to "/login"
         end

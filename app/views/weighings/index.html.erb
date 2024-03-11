@@ -1,0 +1,10 @@
+<h1>Archivio pesate</h1>
+<ul>
+<% @weighings.each do |weighing| %>
+  <li><%= weighing.value%><%= link_to("Delete", weighing_path(weighing.id), data: { turbo_method: :delete })%></li>
+<% end %>
+</ul>
+<%== pagy_nav(@pagy) if @pagy.pages > 1 %>
+
+<%= link_to("homepage", root_path) %>  
+
