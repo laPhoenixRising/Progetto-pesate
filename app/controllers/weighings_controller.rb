@@ -1,29 +1,21 @@
 class WeighingsController < ApplicationController
+  before_action :must_be_logged
+
   include Pagy::Backend
 
   def index
-    if session[:utente]
-      @pagy, @weighings = pagy(Weighing.where(user_id: session[:utente]).order(created_at: :desc))
-    else
-      redirect_to new_login_path
-    end
+    @pagy, @weighings = pagy(Weighing.where(user_id: session[:utente]).order(created_at: :desc))
   end
   
   def create
-    if session[:utente]
-      Weighing.create(value: params[:weigh], user_id: session[:utente])
-      redirect_to root_path
-    else
-      redirect_to new_login_path
-    end
+    Weighing.create(value: params[:weigh], user_id: session[:utente])
+    redirect_to root_path
   end
 
   def destroy
-    if session[:utente]
-      if Weighing.find_by(id: params[:id], user_id: session[:utente]) != nil
-        Weighing.destroy(params[:id])
-        redirect_to weighings_path
-      end
+    if Weighing.find_by(id: params[:id], user_id: session[:utente]) != nil
+      Weighing.destroy(params[:id])
+      redirect_to weighings_path
     end
   end
 end

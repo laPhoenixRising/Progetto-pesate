@@ -1,4 +1,6 @@
 class LoginsController < ApplicationController
+    before_action :must_be_logged, only: [:destroy]
+    
     def new
     end
 
