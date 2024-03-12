@@ -4,17 +4,21 @@ class WeighingsController < ApplicationController
   include Pagy::Backend
 
   def index
-    @pagy, @weighings = pagy(Weighing.where(user_id: session[:utente]).order(created_at: :desc))
+    user = User.find(session[:utente])
+    @pagy, @weighings = pagy(user.archive)
   end
   
   def create
-    Weighing.create(value: params[:weigh], user_id: session[:utente])
+    user = User.find(session[:utente])
+    user.weighings.create(value: params[:weigh])
     redirect_to root_path
   end
 
   def destroy
-    if Weighing.find_by(id: params[:id], user_id: session[:utente]) != nil
-      Weighing.destroy(params[:id])
+    user = User.find(session[:utente])
+    w = user.weighings.find_by(id: params[:id])
+    if w != nil
+      w.destroy
       redirect_to weighings_path
     end
   end
