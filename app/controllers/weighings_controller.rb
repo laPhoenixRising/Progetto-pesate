@@ -10,7 +10,7 @@ class WeighingsController < ApplicationController
   
   def create
     user = User.find(session[:utente])
-    user.weighings.create(value: params[:weigh])
+    user.weighings.create(params.require(:weighing).permit(:value))
     redirect_to root_path
   end
 

@@ -1,6 +1,6 @@
 <%= @user.email%>
-<%= form_with url: weighings_path, method:"post" do |form| %>
-  <%= form.number_field :weigh, step: 0.1, placeholder: "inserisci pesata" %>
+<%= form_with model: @weighing do |form| %>
+  <%= form.number_field :value, step: 0.1, placeholder: "inserisci pesata" %>
   <%= form.submit "Invia" %>
 <% end %>
 
