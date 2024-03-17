@@ -9,9 +9,15 @@ class WeighingsController < ApplicationController
   end
   
   def create
-    user = User.find(session[:utente])
-    user.weighings.create(params.require(:weighing).permit(:value))
-    redirect_to root_path
+    @weighing = Weighing.new(weighing_params)
+    @weighing.user_id = session[:utente]
+    if @weighing.save
+      redirect_to root_path
+    else
+      @user = User.find(session[:utente])
+      @weighings = @user.last_weighings
+      render "home/show", status: :unprocessable_entity
+    end
   end
 
   def destroy
@@ -21,5 +27,9 @@ class WeighingsController < ApplicationController
       w.destroy
       redirect_to weighings_path
     end
+  end
+
+  def weighing_params
+    params.require(:weighing).permit(:value)
   end
 end
