@@ -1,0 +1,7 @@
+<%= form_with model: @weighing do |form| %>
+  <%= form.number_field :value, step: 0.1, placeholder: "inserisci pesata" %>
+  <% @weighing.errors.full_messages_for(:value).each do |message| %>
+    <p><%= message %></p>
+  <% end %>      
+  <%= form.submit "Invia" %>
+<% end %>

@@ -29,6 +29,20 @@ class WeighingsController < ApplicationController
     end
   end
 
+  def edit
+    @weighing = Weighing.find(params[:id])
+  end
+
+  def update
+    @weighing = Weighing.find(params[:id])
+
+    if @weighing.update(weighing_params)
+      redirect_to weighings_path
+    else
+      render :edit, status: :unprocessable_entity
+    end
+  end
+
   def weighing_params
     params.require(:weighing).permit(:value)
   end

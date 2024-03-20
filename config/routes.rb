@@ -7,7 +7,7 @@ Rails.application.routes.draw do
 
   root "home#show"
   resource :login, only: [:new, :create, :destroy]
-  resources :weighings, only: [:index, :destroy, :create]
+  resources :weighings, only: [:index, :destroy, :create, :edit, :update]
 end
 
 
