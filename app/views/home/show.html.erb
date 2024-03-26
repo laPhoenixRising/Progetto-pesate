@@ -1,19 +1,19 @@
 <%= @user.email%>
 <%= form_with model: @weighing do |form| %>
-  <%= form.number_field :value, step: 0.1, placeholder: "inserisci pesata" %>
+  <%= form.number_field :value, step: 0.1, placeholder: t("enter_weight") %>
   <% @weighing.errors.full_messages_for(:value).each do |message| %>
     <p><%= message %></p>
   <% end %>      
-  <%= form.submit "Invia" %>
+  <%= form.submit t("submit") %>
 <% end %>
 
-<h1>Ultime dieci pesate</h1>
+<h1><%= t("last_weighs")%></h1>
 <ul>
   <% @weighings.each do |weighing| %>
   <li><%= weighing.value %> </li>
 <% end %>
 </ul>
-<%= link_to("Vedi tutte", weighings_path) %> 
-<%= link_to("Log out", login_path, data: { turbo_method: :delete }) %>
+<%= link_to(t("see_all"), weighings_path) %> 
+<%= link_to(t("log_out"), login_path, data: { turbo_method: :delete }) %>
 
 
