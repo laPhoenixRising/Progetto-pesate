@@ -15,5 +15,6 @@
 </ul>
 <%= link_to(t("see_all"), weighings_path) %> 
 <%= link_to(t("log_out"), login_path, data: { turbo_method: :delete }) %>
-
+<%= link_to("English", "/language/en", data: { turbo_method: :put })%>
+<%= link_to("Italiano", "/language/it", data: { turbo_method: :put })%>
 

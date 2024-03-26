@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   root "home#show"
   resource :login, only: [:new, :create, :destroy]
   resources :weighings, only: [:index, :destroy, :create, :edit, :update]
+  put "/language/:code", to: "application#change_language"
 end
 
 

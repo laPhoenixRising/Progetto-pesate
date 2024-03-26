@@ -6,6 +6,13 @@ class ApplicationController < ActionController::Base
   end
 
   def setting_language
-    I18n.locale = :it
+    if session[:language]
+      I18n.locale = session[:language]
+    end
+  end
+
+  def change_language
+    session[:language] = params[:code]
+    redirect_to root_path
   end
 end
