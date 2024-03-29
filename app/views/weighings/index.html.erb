@@ -3,6 +3,7 @@
 <% @weighings.each do |weighing| %>
   <li>
     <%= weighing.value %>
+    <%= weighing.created_at.strftime("%d-%m-%y") %>
     <%= link_to(t("delete"), weighing_path(weighing.id), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }) %>
     <%= link_to(t("edit"), edit_weighing_path(weighing.id)) %>
   </li>
