@@ -12,5 +12,10 @@
 
   <body>
     <%= yield %>
+    <%= link_to("English", "/language/en", data: { turbo_method: :put })%>
+    <%= link_to("Italiano", "/language/it", data: { turbo_method: :put })%>
+    <% if session[:utente] %> 
+      <%= link_to(t("log_out"), login_path, data: { turbo_method: :delete }) %> 
+    <% end %>
   </body>
 </html>
