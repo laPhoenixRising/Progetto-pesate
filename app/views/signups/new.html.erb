@@ -1,0 +1,11 @@
+<%= form_with model: @user, url: signup_path, method:"post" do |form| %>
+  E-mail:  <%= form.email_field :email %>
+  <% @user.errors.full_messages_for(:email).each do |message| %>
+    <p><%= message %></p>
+  <% end %> 
+  Password: <%= form.password_field :password %>
+  <% @user.errors.full_messages_for(:password).each do |message| %>
+    <p><%= message %></p>
+  <% end %>      
+  <%= form.submit t("submit") %>
+<% end %>

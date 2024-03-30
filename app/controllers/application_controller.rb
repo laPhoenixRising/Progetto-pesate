@@ -15,4 +15,8 @@ class ApplicationController < ActionController::Base
     session[:language] = params[:code]
     redirect_to root_path
   end
+
+  def must_not_be_logged
+    redirect_to root_path if session[:utente]
+  end
 end

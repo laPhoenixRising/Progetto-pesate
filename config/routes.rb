@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   resources :weighings, only: [:index, :destroy, :create, :edit, :update]
   put "/language/:code", to: "application#change_language"
   get "/backup", to: "weighings#backup"
+  resource :signup, only: [:new, :create]
 end
 
 
