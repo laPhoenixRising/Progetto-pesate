@@ -46,4 +46,16 @@ class WeighingsController < ApplicationController
   def weighing_params
     params.require(:weighing).permit(:value)
   end
+  
+  def backup 
+    user = User.find(session[:utente])
+    weighings = user.archive
+    data = weighings.map do |weighing|
+      value = weighing.value.to_s 
+      created = weighing.created_at.strftime("%d-%m-%y") 
+      "#{value} #{created}"
+    end.join("\n")
+    send_data(data, filename: "backup.txt")
+  end
+
 end

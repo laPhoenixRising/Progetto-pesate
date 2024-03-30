@@ -8,3 +8,4 @@ it:
   delete: "Cancella"
   edit: "Modifica"
   enter_weight: "Inserisci pesata"
+  backup: "Scarica"
