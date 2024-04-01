@@ -9,3 +9,8 @@ en:
   edit: "Edit"
   enter_weight: "Enter weight"
   backup: "Backup"
+  enter_weight: "Enter weight"
+  activerecord:
+    errors:
+      messages:
+        record_invalid: "Invalid record"

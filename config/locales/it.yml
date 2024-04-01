@@ -9,3 +9,27 @@ it:
   edit: "Modifica"
   enter_weight: "Inserisci pesata"
   backup: "Scarica"
+  enter_weight: "Inserisci pesata"
+  activerecord:
+    errors:
+      messages:
+        record_invalid: "Dato non valido"
+      models:
+        user:
+          attributes:
+            email:
+              blank: "Email mancante"
+              invalid: "Formato email non valido"
+            password:
+              blank: "Password mancante"
+              too_short: "Password troppo corta"  
+        weighing:
+          format: "%{message}"
+          attributes:
+            user_id: 
+              blank: "Id utente mancante"
+            user:
+              required: "Utente necessario"
+            value:
+              greater_than: "La pesata deve essere un numero positivo"
+              blank: "Valore pesata mancante"   
