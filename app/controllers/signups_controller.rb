@@ -19,4 +19,14 @@ class SignupsController < ApplicationController
     end
   end
 
+  def confirm
+    user = User.find_by(secret: params[:secret])
+    if user == nil
+      redirect_to root_path
+    else
+      user.update(confirmed: true, secret: nil)
+      redirect_to new_login_path
+    end
+  end
+
 end
