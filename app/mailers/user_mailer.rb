@@ -4,7 +4,7 @@ class UserMailer < ApplicationMailer
 
   def signup_confirmation
     @user = params[:user]
-    @url  = 'http://example.com/login'
+    @url  = confirm_signup_url(secret: @user.secret)
     mail(to: @user.email, subject: 'Welcome to My Awesome Site')
   end
 

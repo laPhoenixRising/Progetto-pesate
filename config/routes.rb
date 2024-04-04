@@ -11,7 +11,7 @@ Rails.application.routes.draw do
   put "/language/:code", to: "application#change_language"
   get "/backup", to: "weighings#backup"
   resource :signup, only: [:new, :create]
-  get "/confirm/:secret", to: "signups#confirm" 
+  get "/confirm/:secret", to: "signups#confirm", as: :confirm_signup
 end
 
 
