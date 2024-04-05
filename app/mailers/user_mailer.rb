@@ -1,6 +1,6 @@
 class UserMailer < ApplicationMailer
 
-  default from: 'notifications@example.com'
+  default from: 'notifications@pesate.olisti.co'
 
   def signup_confirmation
     @user = params[:user]
