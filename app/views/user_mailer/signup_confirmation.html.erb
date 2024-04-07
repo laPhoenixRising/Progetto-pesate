@@ -4,9 +4,9 @@
     <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
   </head>
   <body>
-    <p>Welcome to pesate.olisti.co, <%= @user.email %></p>
+    <p><%= t("welcome_email") %>, <%= @user.email %></p>
     <p>
-      To confirm your account, just follow this link: <%= link_to "Conferma", @url %>.
+      <%= t("confirm_email") %>: <%= link_to "Conferma", @url %>.
     </p>
   </body>
 </html>
