@@ -10,6 +10,8 @@ it:
   enter_weight: "Inserisci pesata"
   backup: "Scarica"
   enter_weight: "Inserisci pesata"
+  welcome_email: "Benvenuto su pesate.olisti.co"
+  confirm_email: "Per confermare il tuo account, basta seguire questo link"
   activerecord:
     errors:
       messages:

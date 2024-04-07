@@ -5,7 +5,7 @@ class LoginsController < ApplicationController
     end
 
     def create
-        user = User.find_by(email: params[:email], password: params[:password])
+        user = User.find_by(email: params[:email], password: params[:password], confirmed: true)
         if user != nil
             session[:utente] = user.id
             redirect_to root_path

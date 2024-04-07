@@ -10,7 +10,10 @@ en:
   enter_weight: "Enter weight"
   backup: "Backup"
   enter_weight: "Enter weight"
+  welcome_email: "Welcome to pesate.olisti.co"
+  confirm_email: "To confirm your account, just follow this link"
   activerecord:
     errors:
       messages:
         record_invalid: "Invalid record"
+

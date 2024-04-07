@@ -15,3 +15,7 @@ La lista delle ultime 10 pesate avrà la possibilità di mostrare anche tutto l'
 La pagina a cui si verrà redirezionati conterrà la lista di tutte le pesate e una paginazione che permetterà in base al numero di pesate caricate di cambiare pagina.
 
 ![Elenco completo pesate](doc/Elenco%20completo%20pesate.png)
+
+## Preview email
+
+http://localhost:3000/rails/mailers/user_mailer/signup_confirmation

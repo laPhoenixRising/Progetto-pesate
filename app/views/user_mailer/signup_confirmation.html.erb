@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <p><%= t("welcome_email") %>, <%= @user.email %></p>
+    <p>
+      <%= t("confirm_email") %>: <%= link_to "Conferma", @url %>.
+    </p>
+  </body>
+</html>
