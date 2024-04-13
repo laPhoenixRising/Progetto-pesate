@@ -1,10 +1,10 @@
-class UserController < ApplicationController
+class UsersController < ApplicationController
 
   def destroy
     user = User.find(params[:id])
-    u = user.weighings
-    u.destroy
     user.destroy
+    session[:utente] = nil
 
     redirect_to root_path
   end
+end

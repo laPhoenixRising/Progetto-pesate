@@ -1,7 +1,7 @@
 class User < ApplicationRecord
   validates :email, presence: true, uniqueness: true, format: { with: URI::MailTo::EMAIL_REGEXP }
   validates :password, presence: true, length: { minimum: 8 }
-  has_many :weighings
+  has_many :weighings, dependent: :destroy
 
   def archive
     weighings.order(created_at: :desc)
