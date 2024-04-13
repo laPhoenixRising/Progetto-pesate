@@ -14,8 +14,8 @@
 <% end %>
 </ul>
 <%= link_to(t("see_all"), weighings_path) %> 
-<%= link_to "Destroy", user_path(@user.id), data: {
+<%= link_to t("destroy"), user_path(@user.id), data: {
                     turbo_method: :delete,
-                    turbo_confirm: "Are you sure?"
+                    turbo_confirm: t("confirm_delete")
                   } %>
 
