@@ -6,5 +6,5 @@ class UserController < ApplicationController
     u.destroy
     user.destroy
 
-    redirect_to signup_path
+    redirect_to root_path
   end
