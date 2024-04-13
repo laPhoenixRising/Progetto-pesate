@@ -12,6 +12,7 @@ en:
   enter_weight: "Enter weight"
   welcome_email: "Welcome to pesate.olisti.co"
   confirm_email: "To confirm your account, just follow this link"
+  confirm_delete: "Are you sure?"
   activerecord:
     errors:
       messages:
