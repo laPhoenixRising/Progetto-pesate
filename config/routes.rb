@@ -12,6 +12,7 @@ Rails.application.routes.draw do
   get "/backup", to: "weighings#backup"
   resource :signup, only: [:new, :create]
   get "/confirm/:secret", to: "signups#confirm", as: :confirm_signup
+  resources :users, only: [:destroy]
 end
 
 
